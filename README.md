@@ -8,9 +8,13 @@ git clone https://github.com/mozammal/restful-uploader.git
 
 cd restful-uploader
 
+As file is uploaded in local file system, you need to change the local repository location in application.properties
+
 mvn clean
 
 mvn spring-boot:run
+
+
 
 The application is now accepting file upload request on  http://localhost:8080/rest/upload
 
