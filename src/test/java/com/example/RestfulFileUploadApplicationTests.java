@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URL;
+import java.net.URLDecoder;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
@@ -59,7 +60,7 @@ public class RestfulFileUploadApplicationTests {
     public void fileUploadTest() throws Exception {
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         URL fileUrl = classloader.getResource(IMAGE_NAME);
-        File file = new File(fileUrl.getFile());
+        File file = new File(URLDecoder.decode(fileUrl.getFile(), "utf-8"));
         InputStream inputStream = new FileInputStream(file);
         MockMultipartFile mockMultipartFile = new MockMultipartFile("file", IMAGE_NAME, FILE_EXTENSION, inputStream);
         mockMvc.perform(MockMvcRequestBuilders.fileUpload(endPoint).file(mockMultipartFile))
