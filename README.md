@@ -2,8 +2,9 @@
 
 A simple file uploader with REST
 
-#Build & Run
-
+#Build & Rungit
+git clone https://github.com/mozammal/restful-uploader.git
+cd restful-uploader
 mvn clean
 mvn spring-boot:run
 
