@@ -31,7 +31,7 @@ public class RestfulFileUploadApplicationTests {
 
     private final String IMAGE_NAME = "test_image.jpg";
 
-    private final String endPoint = "/api/upload";
+    private final String endPoint = "/rest/upload";
 
     private final String FILE_EXTENSION = "jpg";
 
