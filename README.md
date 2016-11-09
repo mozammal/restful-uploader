@@ -14,4 +14,8 @@ mvn spring-boot:run
 
 The application is now accepting file upload request on  http://localhost:8080/rest/upload
 
-As swagger-ui.html is running on http://localhost:8080/swagger-ui.html, you can upload upload file through swagger
+As swagger-ui.html is running on http://localhost:8080/swagger-ui.html, you can upload file through swagger.
+
+![Alt text](src/main/resources/images/swagger-ui.PNG?raw=true "Swagger Upload File Through Post request")
+
+
