@@ -1,4 +1,4 @@
-package com.example.rest;
+package com.example.controller;
 
 import com.example.facade.RestServieResourceFacade;
 import org.apache.log4j.Logger;
@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/rest")
 public class RestApiEndPointController {
 
     private static final Logger LOG = Logger.getLogger(RestApiEndPointController.class);
@@ -21,7 +21,7 @@ public class RestApiEndPointController {
     RestServieResourceFacade restServieResourceFacade;
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST, consumes = {"multipart/form-data"})
-    public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file) throws IOException {
+    public ResponseEntity<?> upload(@RequestPart(value = "file", required = true) MultipartFile file) throws IOException {
 
         if (!file.isEmpty()) {
 
